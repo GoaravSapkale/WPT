@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #div1{
+            background-color: gainsboro;
+            height: 50px;
+            text-align: center;
+        }
+        #div3{
+            background-color: gainsboro;
+            height: 50px;
+            text-align: center;
+        }
+        #div2{
+            
+            height: 400px;
+            
+        }
+        
+    </style>
+    <script>
+       
+       var arr=[{name:"santosh",price:40,quantity:50}];
+        
+
+        function displaytable()
+        {
+            
+          
+            str="<table border='2' align='center'><tr><th>Item Name</th><th>Item Price</th><th>Item Quantity</th></tr>";
+            for(var i of arr)
+            {
+                str+="<tr><td>"+i.name+"</td><td>"+i.price+"</td><td>"+i.quantity+"</td></tr>"
+            }
+
+            str+="</table>";
+            document.getElementById("div4").innerHTML=str;
+        }
+         function additem()
+         {
+            var name=document.getElementById("nm").value;
+            var price=parseInt(document.getElementById("pr").value);
+            var quantity=parseInt(document.getElementById("qt").value);
+            var ob={name:name,price:price,quantity:quantity};
+            arr.push(ob);
+            displaytable()
+         }
+       
+    </script>
+</head>
+<body onload="displaytable()">
+    <div id="div1">
+        <header>Roll No:-229152 &nbsp;&nbsp;&nbsp; Name:-Goarav Sapkale &nbsp;&nbsp;&nbsp;PRN No.:-22054478558 &nbsp;&nbsp;&nbsp;Group:-D</header>
+    </div>
+    <div id="div2">
+        <table align="center" bgcolor="#FFD700" height="60%">
+            <form>
+                <tr>
+                    <td><label for="nm">Item Name</label></td>
+                    <td><input type="text" name="name" id="nm" placeholder="enter item name" autofocus></td>
+                </tr>
+                <tr>
+                    <td><label for="pr">Item Price</label></td>
+                    <td><input type="text" name="price" id="pr" placeholder="enter item price"></td>
+                </tr>
+                <tr>
+                    <td><label for="qt">Item Quantity</label></td>
+                    <td><input type="text" name="quantity" id="qt" placeholder="enter item quantity"></td>
+                </tr>
+                <tr>
+                    <td><button type="button" name="btn" id="btn1" onclick="additem()">Add Item</button></td>
+                    <td><button type="button" name="btn" id="btn1" onclick="cancel()">Cancel</button></td>
+                    
+                </tr>
+            </form>
+        </table>
+        <div id="div4"></div>
+
+    </div>
+    <div id="div3">
+        <footer>@iacsddac2022.com</footer>
+
+    </div>
+</body>
+</html>
